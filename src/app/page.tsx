@@ -1,5 +1,6 @@
 import { Pacifico } from "next/font/google";
 import Image from "next/image";
+import { UserButton } from "@clerk/nextjs";
 import clsx from "clsx";
 
 const pacifico = Pacifico({ weight: "400", subsets: ["latin"] });
@@ -11,7 +12,7 @@ export default function Home() {
         <Image src='/logo.png' alt='Listract Logo' width={40} height={40} />
         <h1 className='text-4xl'>Listract</h1>
       </div>
-      <p className='text-2xl py-8'>Content</p>
+      <p className='text-2xl py-8'>Landing Page</p>
     </main>
   );
 }
