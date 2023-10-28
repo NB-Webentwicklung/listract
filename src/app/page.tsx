@@ -1,18 +1,21 @@
-import { Pacifico } from "next/font/google";
-import Image from "next/image";
-import { UserButton } from "@clerk/nextjs";
-import clsx from "clsx";
+"use client";
 
-const pacifico = Pacifico({ weight: "400", subsets: ["latin"] });
+import { Toaster } from "sonner";
+
+import Navigation from "@/components/layout/Navigation";
+import CreateCollection from "@/components/main/CreateCollection";
 
 export default function Home() {
   return (
-    <main className='container mx-auto w-1/2 mt-12'>
-      <div className={clsx("flex items-center space-x-4", pacifico.className)}>
-        <Image src='/logo.png' alt='Listract Logo' width={40} height={40} />
-        <h1 className='text-4xl'>Listract</h1>
-      </div>
-      <p className='text-2xl py-8'>Landing Page</p>
-    </main>
+    <>
+      <Toaster position='top-center' richColors />
+
+      <main className='container mx-auto w-1/2 mt-12'>
+        <Navigation />
+        <div className='mt-16'>
+          <CreateCollection />
+        </div>
+      </main>
+    </>
   );
 }
