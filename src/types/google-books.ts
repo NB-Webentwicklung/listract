@@ -2,12 +2,18 @@ export interface GoogleBooksVolume {
   id: string;
   volumeInfo: {
     title: string;
+    subtitle: string;
     authors: string[];
     description: string;
     publishedDate: string;
-    // Add other properties as needed
+    imageLinks: {
+      smallThumbnail: string;
+      thumbnail: string;
+    };
+    language: string;
+    pageCount: number;
+    categories: string[];
   };
-  // Add other top-level properties as needed
 }
 
 export interface GoogleBooksResponse {

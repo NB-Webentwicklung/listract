@@ -7,7 +7,7 @@ import "./globals.css";
 const ptSans = PT_Sans({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "📖 Listract",
+  title: "Listract",
   description: "A place where you can store books you enjoy reading.",
 };
 

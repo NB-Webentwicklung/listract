@@ -1,10 +1,11 @@
-import React, { use, useState } from "react";
+import React, { useState } from "react";
 import { Field, Form, Formik } from "formik";
 import { Search } from "lucide-react";
-import { useQuery } from "react-query";
 
 import { getBooksBySearchTerm } from "@/actions/book";
 import { type GoogleBooksVolume } from "@/types/google-books";
+
+import SearchResults from "./SearchResults";
 
 const SearchsBooks = () => {
   const [searchResults, setSearchResults] = useState<
@@ -30,7 +31,7 @@ const SearchsBooks = () => {
               className='px-4 py-3 w-full border border-gray-300 mx-auto flex rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500'
               name='searchTerm'
               type='text'
-              placeholder='Search for book titles, authors, ...'
+              placeholder='Search for books by title, author, ...'
             />
             <button type='submit'>
               <Search
@@ -43,23 +44,7 @@ const SearchsBooks = () => {
       </Formik>
       <div className='mt-6'>
         {searchResults && searchResults.length > 0 && (
-          <div>
-            {searchResults.map((book) => (
-              <div
-                key={book.id}
-                className='border-2 border-gray-400 my-2 rounded-lg px-4 py-2'
-              >
-                <div>
-                  <h3 className='text-lg font-semibold'>
-                    {book.volumeInfo.title}
-                  </h3>
-                  <p className='text-sm'>
-                    {book.volumeInfo.authors || "no author"}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <SearchResults searchResults={searchResults} />
         )}
         {searchResults && searchResults.length === 0 && (
           <p className='text-center'>No books found.</p>
