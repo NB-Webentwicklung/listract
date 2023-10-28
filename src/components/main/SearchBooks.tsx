@@ -26,7 +26,7 @@ const SearchsBooks = () => {
         }}
       >
         <Form>
-          <div className='flex items-center w-2/3 mx-auto relative'>
+          <div className='flex items-center w-full md:w-2/3 mx-auto relative'>
             <Field
               className='px-4 py-3 w-full border border-gray-300 mx-auto flex rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500'
               name='searchTerm'

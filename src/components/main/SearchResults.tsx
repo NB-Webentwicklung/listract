@@ -31,9 +31,11 @@ const SearchResults = ({ searchResults }: SearchResultsProps) => {
               height={112}
             />
             <div className='py-4'>
-              <h3 className='text-lg font-semibold'>{book.volumeInfo.title}</h3>
+              <h3 className='text-md md:text-lg font-semibold'>
+                {book.volumeInfo.title}
+              </h3>
 
-              <div className='text-sm flex space-x-4 pt-2'>
+              <div className='text-sm flex flex-col md:flex-row md:space-x-4 pt-2'>
                 <p>{authors ? authors.join(", ") : "No authors found"}</p>
                 <p>{book.volumeInfo.publishedDate.split("-")[0]}</p>
                 <p>{book.volumeInfo.pageCount} pages</p>

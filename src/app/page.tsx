@@ -16,7 +16,7 @@ export default function Home() {
     <QueryClientProvider client={queryClient}>
       <Toaster position='top-center' richColors />
 
-      <main className='container mx-auto w-1/2 mt-12'>
+      <main className='container px-2 mx-auto w-full md:w-2/3 xl:w-1/2 mt-12'>
         <Navigation />
         <div className='mt-8'>
           {userId ? (
