@@ -4,6 +4,7 @@ import { useAuth } from "@clerk/nextjs";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Toaster } from "sonner";
 
+import Landing from "@/components/Landing";
 import Navigation from "@/components/layout/Navigation";
 import SearchsBooks from "@/components/main/SearchBooks";
 
@@ -18,13 +19,7 @@ export default function Home() {
 
       <main className='container px-2 mx-auto w-full md:w-2/3 xl:w-1/2 mt-12'>
         <Navigation />
-        <div className='mt-8'>
-          {userId ? (
-            <SearchsBooks />
-          ) : (
-            <p className='text-center'>Please sign-in first.</p>
-          )}
-        </div>
+        <div className='mt-8'>{userId ? <SearchsBooks /> : <Landing />}</div>
       </main>
     </QueryClientProvider>
   );

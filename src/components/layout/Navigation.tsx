@@ -20,7 +20,7 @@ const Navigation = () => {
         {userId ? (
           <UserButton showName={true} />
         ) : (
-          <Link href={"/sign-in"}>Sign In</Link>
+          <Link href={"/sign-in"}>Login</Link>
         )}
       </div>
     </div>
